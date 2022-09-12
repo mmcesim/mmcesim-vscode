@@ -2,7 +2,7 @@
   "name": "mmcesim",
 	"displayName": "mmCEsim",
 	"description": "Millimeter Wave Channel Estimation Simulation",
-	"icon": "https://img.mmcesim.org/logo/mmCEsim_logo_256.png",
+	"icon": "icons/mmCEsim_logo_256.png",
 	"publisher": "mmcesim",
 	"version": "0.0.1",
 	"author": {
@@ -17,7 +17,7 @@
 		"url": "https://github.com/mmcesim/mmcesim-vscode"
 	},
 	"engines": {
-		"vscode": "^1.65.0"
+		"vscode": "^1.71.0"
 	},
 	"categories": [
 		"Programming Languages"

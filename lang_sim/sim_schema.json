@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "mmCEsim",
+  "description": "mmCEsim configuration file",
+  "properties": {
+    "version": {
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "0.1.0",
+          "description": "Version 0.1.0."
+        }
+      ],
+      "description": "Targeted mmCEsim version."
+    },
+    "meta": {
+      "type": "object",
+      "description": "mmCEsim metadata.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Project title."
+        },
+        "description": {
+          "type": "string",
+          "description": "Project description."
+        },
+        "author": {
+          "type": "string",
+          "description": "Author name."
+        },
+        "email": {
+          "type": "string",
+          "description": "Author email.",
+          "format": "email"
+        },
+        "license": {
+          "type": "string",
+          "description": "License for the project if open source."
+        },
+        "date": {
+          "type": "string",
+          "description": "Data for the modification of the project."
+        },
+        "comments": {
+          "type": "string",
+          "description": "Addition project comments."
+        }
+      }
+    },
+    "physics": {
+      "type": "object",
+      "description": "mmWave physical settings.",
+      "properties": {
+        "frequency": {
+          "type": "string",
+          "description": "Simulation frequency band.",
+          "enum": [ "narrow", "wide" ],
+          "default": "narrow"
+        },
+        "off_grid": {
+          "type": "boolean",
+          "description": "Consider off-grid (power leakage, super resolution) effect.",
+          "default": true
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Node ID. Used as variable name and storage file name."
+          },
+          "role": {
+            "type": "string",
+            "description": "Node role.",
+            "enum": [ "receiver", "transmitter" ]
+          },
+          "num": {
+            "type": "integer",
+            "description": "Copies of the same node (not number of antennas/elements).",
+            "minimum": 1,
+            "default": 1
+          }
+        },
+        "required": ["id"]
+      }
+    }
+  }
+}

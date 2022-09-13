@@ -4,7 +4,7 @@
 	"description": "Millimeter Wave Channel Estimation Simulation",
 	"icon": "icons/mmCEsim_logo_256.png",
 	"publisher": "mmcesim",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": {
 		"name": "Wuqiong Zhao",
 		"email": "me@wqzhao.org",
@@ -16,6 +16,9 @@
 		"type": "git",
 		"url": "https://github.com/mmcesim/mmcesim-vscode"
 	},
+	"extensionDependencies":[
+		"redhat.vscode-yaml"
+	],
 	"engines": {
 		"vscode": "^1.71.0"
 	},
@@ -38,22 +41,19 @@
 				"id": "cpp",
 				"extensions": [
 					".mmcesim-cpp"
-				],
-				"aliases": ["mmCEsim C++"]
+				]
 			},
 			{
 				"id": "python",
 				"extensions": [
 					".mmcesim-py"
-				],
-				"aliases": ["mmCEsim Python"]
+				]
 			},
 			{
 				"id": "matlab",
 				"extensions": [
 					".mmcesim-m"
-				],
-				"aliases": ["mmCEsim Matlab"]
+				]
 			},
 			{
 				"id": "yaml",
@@ -61,7 +61,7 @@
 					".sim",
 					".mmcesim-sim"
 				],
-				"aliases": ["mmCEsim"]
+				"aliases": ["YAML", "mmCEsim"]
 			},
 			{
 				"id": "mmcesim-alg",
@@ -69,6 +69,12 @@
 					".alg", ".mmcesim-alg"
 				],
 				"aliases": ["mmCEsim ALG"]
+			}
+		],
+		"yamlValidation": [
+			{
+				"fileMatch": ["*.sim", "*.mmcesim-sim"],
+				"url": "./lang_sim/sim_schema.json"
 			}
 		]
 	},

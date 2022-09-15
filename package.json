@@ -4,7 +4,7 @@
 	"description": "Millimeter Wave Channel Estimation Simulation",
 	"icon": "icons/mmCEsim_logo_256.png",
 	"publisher": "mmcesim",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": {
 		"name": "Wuqiong Zhao",
 		"email": "me@wqzhao.org",
@@ -68,7 +68,15 @@
 				"extensions": [
 					".alg", ".mmcesim-alg"
 				],
-				"aliases": ["mmCEsim ALG"]
+				"aliases": ["mmCEsim ALG"],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "mmcesim-alg",
+				"scopeName": "source.mmcesim-alg",
+				"path": "./syntaxes/mmcesim-alg.tmLanguage.json"
 			}
 		],
 		"yamlValidation": [

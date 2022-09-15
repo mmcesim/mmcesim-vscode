@@ -1,0 +1,204 @@
+{
+  "information_for_contributors": [
+    "mmCEsim ALG grammar support. Visit mmcesim.org for more information."
+  ],
+  "name": "mmCEsim ALG",
+  "scopeName": "source.mmcesim-alg",
+  "fileTypes": [".alg", ".mmcesim-alg"],
+  "foldingStartMarker": "\\b(ELSE|ELIF|FOR|FOREVER|FUNCTION|IF|LOOP|WHILE|BRANCH|)\\b",
+  "foldingStopMarker": "\\b(END|ELSE|ELIF|MERGE)\\b",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#code"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#constant"
+    },
+    {
+      "include": "#support"
+    },
+    {
+      "include": "#keyword"
+    },
+    {
+      "include": "#class"
+    },
+    {
+      "include": "#variable"
+    }
+  ],
+  "repository": {
+    "comment": {
+			"begin": "(^\\s+)?(?<=^|\\W)(?<!-)(?=#)(?!#{)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.mmcesim-alg"
+				}
+			},
+			"end": "(?!\\G)",
+			"patterns": [
+				{
+					"begin": "#!",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.shebang.mmcesim-alg"
+						}
+					},
+					"end": "$",
+					"name": "comment.line.number-sign.shebang.mmcesim-alg"
+				},
+				{
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.mmcesim-alg"
+						}
+					},
+					"end": "$",
+					"name": "comment.line.number-sign.mmcesim-alg"
+				}
+			]
+		},
+    "string": {
+      "patterns": [
+        {
+          "match": "\"(.*?)\"",
+          "name": "string.quoted.binary.mmcesim-alg"
+        },
+        {
+          "match": "'(.*?)'",
+          "name": "string.quoted.single.mmcesim-alg"
+        },
+        {
+          "match": "(?<=(COMMENT)).*",
+          "name": "string.quoted.binary.mmcesim-alg"
+        },
+        {
+          "match": "\\`(.*?)\\`",
+          "name": "keyword.other.mmcesim-alg"
+        }
+      ]
+    },
+    "constant": {
+      "patterns": [
+        {
+          "match": "\\b(true|false|\\^t)\\b",
+          "name": "keyword.other.mmcesim-alg"
+        },
+        {
+          "match": "\\^[TtHIi]",
+          "name": "keyword.other.mmcesim-alg"
+        },
+        {
+          "match": "(\\^(\\*|\\\\star|\\\\ast))|\\^\\{([TtHIi\\*]|\\\\star|\\\\ast|-1)\\}",
+          "name": "keyword.other.mmcesim-alg"
+        },
+        {
+					"match": "0[xX][0-9A-Fa-f]+",
+					"name": "constant.numeric.hex.mmcesim-alg"
+				},
+				{
+					"match": "0\\d+",
+					"name": "constant.numeric.octal.mmcesim-alg"
+				},
+				{
+					"match": "\\d{1,2}#[0-9a-zA-Z@_]+",
+					"name": "constant.numeric.other.mmcesim-alg"
+				},
+				{
+					"match": "\\d+",
+					"name": "constant.numeric.integer.mmcesim-alg"
+				}
+      ]
+    },
+    "support": {
+      "patterns": [
+        {
+          "match": "(\\\\)[0-9A-Za-z_]+",
+          "name": "support.function.builtin.mmcesim-alg"
+        },
+        {
+          "match": "(?<=(FUNCTION|CALL)\\s)(\\w+)",
+          "name": "support.function.builtin.mmcesim-alg"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "match": "\\b(BRANCH|BREAK|CALC|CALL|COMMENT|CPP|ESTIMATE|INIT|MATLAB|MERGE|NEW|OCTAVE|PRINT|PYTHON|RECOVER|ELSE|ELIF|FOR|FOREVER|FUNCTION|IF|LOOP|WHILE|END|ELSE|ELIF)\\b",
+          "name": "keyword.control.mmcesim-alg"
+        }
+      ]
+    },
+    "class": {
+      "patterns": [
+        {
+          "match": "(?<=(::))[0-9A-Za-z]*",
+          "name": "support.class.mmcesim-alg"
+        },
+        {
+          "match": "(?<=(dtype\\=))[A-Za-z]*",
+          "name": "support.class.mmcesim-alg"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "match": "[A-Za-z_]+",
+          "name": "variable.other.normal.mmcesim-alg"
+        }
+      ]
+    },
+    "code": {
+      "patterns": [
+        {
+          "include": "#code-cpp"
+        },
+        {
+          "include": "#code-py"
+        },
+        {
+          "include": "#code-m"
+        }
+      ]
+    },
+    "code-cpp": {
+      "begin": "\\bCPP\\b",
+      "end": "$",
+      "name": "meta.embedded.block.cpp",
+      "patterns": [
+        {
+          "include": "source.cpp"
+        }
+      ]
+    },
+    "code-py": {
+      "begin": "\\bPYTHON\\b",
+      "end": "$",
+      "name": "meta.embedded.block.python",
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    "code-m": {
+      "begin": "\\b(MATLAB|OCTAVE)\\b",
+      "end": "$",
+      "name": "meta.embedded.block.matlab",
+      "patterns": [
+        {
+          "include": "source.matlab"
+        }
+      ]
+    }
+  }
+}

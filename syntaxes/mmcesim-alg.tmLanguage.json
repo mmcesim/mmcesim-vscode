@@ -35,36 +35,36 @@
   ],
   "repository": {
     "comment": {
-			"begin": "(^\\s+)?(?<=^|\\W)(?<!-)(?=#)(?!#{)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.whitespace.comment.leading.mmcesim-alg"
-				}
-			},
-			"end": "(?!\\G)",
-			"patterns": [
-				{
-					"begin": "#!",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.shebang.mmcesim-alg"
-						}
-					},
-					"end": "$",
-					"name": "comment.line.number-sign.shebang.mmcesim-alg"
-				},
-				{
-					"begin": "#",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.mmcesim-alg"
-						}
-					},
-					"end": "$",
-					"name": "comment.line.number-sign.mmcesim-alg"
-				}
-			]
-		},
+      "begin": "(^\\s+)?(?<=^|\\W)(?<!-)(?=#)(?!#{)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.whitespace.comment.leading.mmcesim-alg"
+        }
+      },
+      "end": "(?!\\G)",
+      "patterns": [
+        {
+          "begin": "#!",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.shebang.mmcesim-alg"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.number-sign.shebang.mmcesim-alg"
+        },
+        {
+          "begin": "#",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.mmcesim-alg"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.number-sign.mmcesim-alg"
+        }
+      ]
+    },
     "string": {
       "patterns": [
         {
@@ -100,21 +100,21 @@
           "name": "keyword.other.mmcesim-alg"
         },
         {
-					"match": "0[xX][0-9A-Fa-f]+",
-					"name": "constant.numeric.hex.mmcesim-alg"
-				},
-				{
-					"match": "0\\d+",
-					"name": "constant.numeric.octal.mmcesim-alg"
-				},
-				{
-					"match": "\\d{1,2}#[0-9a-zA-Z@_]+",
-					"name": "constant.numeric.other.mmcesim-alg"
-				},
-				{
-					"match": "\\d+",
-					"name": "constant.numeric.integer.mmcesim-alg"
-				}
+          "match": "0[xX][0-9A-Fa-f]+",
+          "name": "constant.numeric.hex.mmcesim-alg"
+        },
+        {
+          "match": "0\\d+",
+          "name": "constant.numeric.octal.mmcesim-alg"
+        },
+        {
+          "match": "\\d{1,2}#[0-9a-zA-Z@_]+",
+          "name": "constant.numeric.other.mmcesim-alg"
+        },
+        {
+          "match": "\\d+",
+          "name": "constant.numeric.integer.mmcesim-alg"
+        }
       ]
     },
     "support": {
@@ -124,7 +124,7 @@
           "name": "support.function.builtin.mmcesim-alg"
         },
         {
-          "match": "(?<=(FUNCTION|CALL)\\s)(\\w+)",
+          "match": "(?<=(FUNCTION|CALL)\\s+)(\\w+)",
           "name": "support.function.builtin.mmcesim-alg"
         }
       ]

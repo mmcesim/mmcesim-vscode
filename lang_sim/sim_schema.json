@@ -10,6 +10,14 @@
         {
           "const": "0.1.0",
           "description": "Version 0.1.0."
+        },
+        {
+          "const": "0.1.1",
+          "description": "Version 0.1.1."
+        },
+        {
+          "const": "0.2.0",
+          "description": "Version 0.2.0."
         }
       ],
       "description": "Targeted mmCEsim version."
@@ -89,6 +97,9 @@
         },
         "required": ["id"]
       }
+    },
+    "channels": {
+      "type": "array"
     }
   }
 }

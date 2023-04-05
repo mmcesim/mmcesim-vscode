@@ -4,6 +4,9 @@ All notable changes to the "mmcesim" extension will be documented in this file.
 
 ## v0.0
 
+### v0.0.5
+- Update mmCEsim versions in YAML schema for `.sim` (to `0.2.1`)
+
 ### v0.0.4
 - Update mmCEsim versions in YAML schema for `.sim`
 

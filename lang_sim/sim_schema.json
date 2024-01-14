@@ -22,6 +22,14 @@
         {
           "const": "0.2.1",
           "description": "Version 0.2.1."
+        },
+        {
+          "const": "0.2.2",
+          "description": "Version 0.2.2."
+        },
+        {
+          "const": "0.3.0",
+          "description": "Version 0.3.0."
         }
       ],
       "description": "Targeted mmCEsim version."

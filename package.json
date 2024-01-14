@@ -4,7 +4,7 @@
 	"description": "Millimeter Wave Channel Estimation Simulation",
 	"icon": "icons/mmCEsim_logo_256.png",
 	"publisher": "mmcesim",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"author": {
 		"name": "Wuqiong Zhao",
 		"email": "me@wqzhao.org",
